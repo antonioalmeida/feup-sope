@@ -15,7 +15,7 @@ int main(void) {
         exit(1);
     }
 
-    if (pid != 0)
+    if (pid == 0)
         printf("World!\n");
 
     exit(0);

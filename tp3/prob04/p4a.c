@@ -12,10 +12,10 @@ int main(void) {
         exit(1);
     }
 
-    if (pid == 0)
-        printf("World!\n");
-    else
+    if (pid != 0)
         printf("Hello ");
+    else
+        printf("World!\n");
 
     exit(0);
 }
