@@ -33,10 +33,9 @@ int main(int argc, char *argv[])
         else if (S_ISDIR(stat_buf.st_mode)) str = "directory";
         else str = "other";
 
-        printf("%-25s - %s - %lld - %llu\n", direntp->d_name, str, stat_buf.st_size, stat_buf.st_ino);
+        printf("%-25s - %s - %ld - %lu\n", direntp->d_name, str, stat_buf.st_size, stat_buf.st_ino);
     }
 
     closedir(dirp);
     exit(0);
 }
-
