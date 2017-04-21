@@ -82,7 +82,7 @@ int fork_pipes (int n, char** cmds) {
         /* Last stage of the pipeline - set stdin be the read end of the previous pipe
            and output to the original file descriptor 1. */
         if (in != STDIN_FILENO)
-                dup2(in, 0);
+                dup2(in, STDIN_FILENO);
 
         /* Execute the last stage with the current process. */
         int r_value = execvp(get_first_arg(cmds[i]), get_argv(cmds[i]));

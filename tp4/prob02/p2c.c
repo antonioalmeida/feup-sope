@@ -23,17 +23,8 @@ int main(void) {
 
 	if (sigaction(SIGINT,&action,NULL) < 0) {
 		fprintf(stderr,"Unable to install SIGINT handler\n");
-		exit(1); 
-}
-	struct sigaction term_action;
-	term_action.sa_handler = sigterm_handler;
-	sigemptyset(&term_action.sa_mask);
-	term_action.sa_flags = 0;
-
-	if (sigaction(SIGTERM,&term_action,NULL) < 0) {
-		fprintf(stderr,"Unable to install SIGTERM handler\n");
-		exit(1); 
-}
+        exit(1); 
+    }
 
 	printf("Try me with CTRL-C ...\n");
 	while(1) pause();
